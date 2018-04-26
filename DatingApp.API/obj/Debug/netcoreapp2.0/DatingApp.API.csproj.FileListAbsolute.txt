@@ -1,0 +1,10 @@
+E:\DatingAppRepository\DatingApp.API\bin\Debug\netcoreapp2.0\DatingApp.API.deps.json
+E:\DatingAppRepository\DatingApp.API\bin\Debug\netcoreapp2.0\DatingApp.API.runtimeconfig.json
+E:\DatingAppRepository\DatingApp.API\bin\Debug\netcoreapp2.0\DatingApp.API.runtimeconfig.dev.json
+E:\DatingAppRepository\DatingApp.API\bin\Debug\netcoreapp2.0\DatingApp.API.dll
+E:\DatingAppRepository\DatingApp.API\bin\Debug\netcoreapp2.0\DatingApp.API.pdb
+E:\DatingAppRepository\DatingApp.API\obj\Debug\netcoreapp2.0\DatingApp.API.csproj.CoreCompileInputs.cache
+E:\DatingAppRepository\DatingApp.API\obj\Debug\netcoreapp2.0\DatingApp.API.AssemblyInfoInputs.cache
+E:\DatingAppRepository\DatingApp.API\obj\Debug\netcoreapp2.0\DatingApp.API.AssemblyInfo.cs
+E:\DatingAppRepository\DatingApp.API\obj\Debug\netcoreapp2.0\DatingApp.API.dll
+E:\DatingAppRepository\DatingApp.API\obj\Debug\netcoreapp2.0\DatingApp.API.pdb
