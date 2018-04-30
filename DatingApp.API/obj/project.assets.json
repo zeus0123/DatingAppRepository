@@ -12539,11 +12539,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\DatingAppRepository\\DatingApp.API\\DatingApp.API.csproj",
+      "projectUniqueName": "e:\\DatingAppRepository\\DatingApp.API\\DatingApp.API.csproj",
       "projectName": "DatingApp.API",
-      "projectPath": "E:\\DatingAppRepository\\DatingApp.API\\DatingApp.API.csproj",
+      "projectPath": "e:\\DatingAppRepository\\DatingApp.API\\DatingApp.API.csproj",
       "packagesPath": "C:\\Users\\trishaanpc\\.nuget\\packages\\",
-      "outputPath": "E:\\DatingAppRepository\\DatingApp.API\\obj\\",
+      "outputPath": "e:\\DatingAppRepository\\DatingApp.API\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\trishaanpc\\AppData\\Roaming\\NuGet\\NuGet.Config",
