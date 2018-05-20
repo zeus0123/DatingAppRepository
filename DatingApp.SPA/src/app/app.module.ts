@@ -9,6 +9,9 @@ import { NavComponent } from './nav/nav.component';
 import { AuthService } from './_services/auth.service';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
+import { AlertifyService } from './_services/alertify.service';
+
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 
 
@@ -23,9 +26,10 @@ import { RegisterComponent } from './register/register.component';
   imports: [
     BrowserModule,
     HttpModule,
-    FormsModule
+    FormsModule,
+    BsDropdownModule.forRoot()
   ],
-  providers: [AuthService],
+  providers: [AuthService,AlertifyService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
