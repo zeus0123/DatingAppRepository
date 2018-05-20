@@ -1,4 +1,4 @@
-.dropdown-menu{
+.dropdown-menu, .dropdown-toggle{
     cursor: pointer;
 }
 
