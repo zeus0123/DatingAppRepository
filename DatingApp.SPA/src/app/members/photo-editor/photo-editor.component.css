@@ -1,0 +1,17 @@
+.nv-file-over 
+{ border: dotted 3px red; }
+
+input[type=file]{
+    color: transparent;
+}
+.card{
+    width: 10rem;
+    height: 5rem;
+}
+.my-drop-zone { border: dotted 3px lightgray; }
+
+img.img-thumbnail{
+    height: 100px;
+    width: 100px;
+    margin-bottom: 2px;
+}

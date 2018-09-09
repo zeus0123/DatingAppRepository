@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpModule } from '@angular/http';
+
 import { FormsModule} from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { JwtModule } from '@auth0/angular-jwt';
 
 import { AppComponent } from './app.component';
 import { ValueComponent } from './value/value.component';
@@ -20,7 +22,7 @@ import { appRoutes } from './routes';
 import { AuthGuard } from './_guards/auth.guard';
 import { UserService } from './_services/user.service';
 import { MemberCardComponent } from './members/member-card/member-card.component';
-import { AuthModule } from './auth/auth.module';
+
 import { MemberDetailComponent } from './members/member-detail/member-detail.component';
 import { MemberDetailResolver } from './_resolvers/member-detail.resolver';
 import { MemberListResolver } from './_resolvers/member-list.resolver.';
@@ -28,6 +30,14 @@ import { NgxGalleryModule } from 'ngx-gallery';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { MemberEditResolver } from './_resolvers/member-edit.resolver';
 import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
+import { FileUploadModule } from '../../node_modules/ng2-file-upload';
+import { ErrorInterceptorProvider } from './_services/error.interceptor';
+import { TokenInterceptor } from './_services/token.interceptor';
+
+export function tokenGetter() {
+  return localStorage.getItem('token');
+}
 
 
 @NgModule({
@@ -42,17 +52,27 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
     MessagesComponent,
     MemberCardComponent,
     MemberDetailComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
 ],
   imports: [
     BrowserModule,
-    HttpModule,
     FormsModule,
+    HttpClientModule,
     BsDropdownModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    AuthModule,
     TabsModule.forRoot(),
-    NgxGalleryModule
+    NgxGalleryModule,
+    FileUploadModule,
+    JwtModule.forRoot({
+      config: {
+
+        headerName: 'Authorization',
+        authScheme: 'Bearer ',
+        tokenGetter: tokenGetter,
+
+      }
+    })
   ],
   providers: [AuthService,
               AlertifyService,
@@ -61,7 +81,14 @@ import { PreventUnsavedChanges } from './_guards/prevent-unsaved-changes.guard';
               MemberDetailResolver,
               MemberListResolver,
               MemberEditResolver,
-              PreventUnsavedChanges],
+              PreventUnsavedChanges,
+               {
+                provide: HTTP_INTERCEPTORS,
+                useClass: TokenInterceptor,
+                multi: true
+              },
+              ErrorInterceptorProvider,
+             ],
               
   bootstrap: [AppComponent]
 })
